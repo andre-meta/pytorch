@@ -60,8 +60,8 @@ def main() -> None:
     test_prioritizations = aggregated_heuristics.get_aggregated_priorities()
 
     prediction_confidences = get_prediction_confidences(selected_tests)
-    print(os.getenv("CI"))
-    if os.getenv("CI", "0") == "true":
+    if os.getenv("CI") == "true":
+        print("Emitting metrics")
         emit_metric(
             "td_results",
             {
