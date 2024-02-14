@@ -61,7 +61,7 @@ def main() -> None:
 
     prediction_confidences = get_prediction_confidences(selected_tests)
 
-    if os.getenv("CI", "0") == "1":
+    if os.getenv("CI", "0") == "true":
         emit_metric(
             "td_results",
             {
